@@ -1,0 +1,79 @@
+﻿@model eCS.Models.calculator
+@{
+    ViewBag.Title = "Home";
+}
+
+<head>
+    <title>To do List</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta http-equiv="X-UA-Compatible" content="IE=11" /> 
+    @*<script src="~/js/owl.carousel.min.js"></script>*@
+    
+   
+    <script src="~/js/Home/home.js"></script>
+    
+    <link href="~/css/global.min.css" rel="stylesheet" />
+   
+          </head>
+
+<body>
+    <div class="calculate-1 " ng-controller="HomeControllers" ng-app="Totolist" >
+
+        
+        <button ng-if="!todolistShow"class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+            Log in
+        </button>
+        <div ng-if="!todolistShow" class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                <div class="error" ng-show="showError">Sign up error</div>
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                        <h4 class="modal-title" id="myModalLabel">Log in</h4>
+                    </div> <!-- /.modal-header -->
+                    <div class="modal-body">
+                        <form role="form">
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <input type="email" ng-model="email.text" class="form-control" id="uLogin" placeholder="Login">
+                                    <label for="uLogin" class="input-group-addon glyphicon glyphicon-user"></label>
+                                    <div role="alert">
+                                        <span class="error" ng-show="myForm.input.$error.required">
+                                            Required!
+                                        </span>
+                                        <span class="error" ng-show="myForm.input.$error.email">
+                                            Not valid email!
+                                        </span>
+                                    </div>
+
+                                </div>
+                            </div> <!-- /.form-group -->
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <input type="password" class="form-control" id="uPassword" placeholder="Password" ng-model="password">
+                                    <label for="uPassword" class="input-group-addon glyphicon glyphicon-lock"></label>
+                                </div> <!-- /.input-group -->
+                            </div> <!-- /.form-group -->
+                          
+                        </form>
+                    </div> <!-- /.modal-body -->
+                    <div class="modal-footer">
+                        <button class="form-control btn btn-primary" ng-click="login()">Ok</button>
+                        <a href="#" ng-click="signup()">Sign up</a>
+                    </div> <!-- /.modal-footer -->
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+       
+        <!--To to list Template Adding using directives-->
+        <div ng-if="todolistShow">
+            <div to-do-List></div>
+        </div>
+
+
+        <div ng-if="logoutTrue">Log out successfull</div>
+    </div>
+
+</body>

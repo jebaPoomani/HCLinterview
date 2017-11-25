@@ -1,0 +1,28 @@
+﻿@font-face {
+    font-family:'Effra-Regular';    
+    src:url('../fonts/Effra-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family:'Effra-Light';    
+    src:url('../fonts/Effra-Light.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family:'Effra-Medium';    
+    src:url('../fonts/Effra-Medium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family:'Effra-Bold';    
+    src:url('../fonts/Effra-Bold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
